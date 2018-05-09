@@ -1,16 +1,21 @@
-现在updateing实现了一个加载支持修改数据包内容的EAPOL认证客户端并将本工程的认证算法做成了插件，更加容易适配各个学校，建议大家尝试https://github.com/updateing/minieap
+/*************************************************************************
+闲言碎语
+在离开华科的前两个月...
+想想还是把这两年折腾的东西传上来方便后人吧
+主要是已经编译好的两个mentohust，一个是自己编译的树莓派raspbian-arm64的版本，一个是HUSTMOON在googlecode上的windows版本。
+曾经尝试自己用锐捷V4认证算法的linux源码移植到windows，后来发现还是有太多linux api不能直接替换，难度无异于重构代码。
+不得已翻出HUSTMOON大佬当年唯一一份支持锐捷V2算法的客户端，没想到十年过去了，这个windows版依然坚挺，真是泽被后世。
+传到Hub上，一方面自己作为备份，一是方便后来有心人。
 
-完全没怎么看原来的代码，瞎改的。
-加入了V4支持。具体算法看checkV4.c
-
-所有hash都是从算法在rhash和ampheck借来魔改的……。
+/*************************************************************************
+从hyrathb巨巨fork过来的源码备份。
 
 建议Arch Linux用户安装AUR中的mentohust-git
 #使用方法
 
 #安装mentohust：建议Ubuntu用户使用Deb包安装，Fedora用户使用RPM包安装
 
-#如果确定自己可以使用xrgsu认证成功，打开终端输入sudo mentohust运行即可
+#如果确定自己可以使用xrgsu认证成功，打开终端输入sudo mentohust运行即可（华科认证通常不需要下边的操作）
 如果不确定，切换到锐捷所在目录，然后输入以下命令：
 sudo mkdir /etc/mentohust
 sudo cp ./8021x.exe  /etc/mentohust
